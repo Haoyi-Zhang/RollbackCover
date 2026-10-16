@@ -65,6 +65,8 @@ The certificate contains a positive hitting support and a recursively checkable 
 
 ## Repository map
 
+The explanatory packet-chain, subset-lattice, and lower-bound-tree diagrams are generated directly in Python. Install the optional drawing dependencies with `python3 -m pip install -r scripts/requirements-schematics.txt`, then run `python3 scripts/draw_schematics.py`. `python3 scripts/draw_schematics.py --check` checks the retained embedded-font vector PDFs without changing scientific results. The semantic reproduction commands use the standard library and do not require these optional dependencies.
+
 Solver entry points normalize edge order by cardinality and mask. Deleting hit edges preserves that order, so internal packing scans reuse it; the unsorted packing wrapper still sorts. This changes no support choice, proof ordering, or search counters and makes no measured runtime claim. The portable tests use a literal Cartesian frontier/support oracle and a separate priority-scan packing reference. Run the full unit suite with `PYTHONPATH=src python3 -m unittest discover -s tests -v`.
 
 - `src/frontier.py`: absorptive antichain operations and exhaustive antichain generation.
